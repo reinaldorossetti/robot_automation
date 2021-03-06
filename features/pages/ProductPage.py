@@ -48,8 +48,11 @@ class ProductPage(BasePage):
     def get_products_value(self):
         self.check_element_is_visible(self.locator.product_value2)
         self.product_value2 = self.selib.get_text(self.locator.product_value2)
-        assert self.product_value1, self.product_value2
         self.logger.info(self.product_value2)
+
+        # validated the price of the product is the same on the shopping cart page.
+        assert self.product_value1, self.product_value2
+
         self.sub_product_value = self.selib.get_text(self.locator.sub_product_value)
         self.logger.info(self.sub_product_value)
         total_value = self.selib.get_text(self.locator.total_value)
@@ -58,8 +61,10 @@ class ProductPage(BasePage):
 
     def get_value_quantity(self):
         self.quantity = self.selib.get_text(self.locator.product_amount2)
-        assert self.product_amount1, self.quantity
         self.logger.info(self.quantity)
+
+        # validated the value of the product is the same on the shopping cart page.
+        assert self.product_amount1, self.quantity
 
     def calculate_cart(self):
         self.get_products_value()
