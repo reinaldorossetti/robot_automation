@@ -4,9 +4,10 @@ import re
 
 class BasePage(PageObject):
 
-    def __init__(self, timeout=30):
+    def __init__(self, timeout=20):
         super().__init__()
         self.wait_timeout = timeout
+        self.selib.set_selenium_implicit_wait(self.wait_timeout)
 
     def wait_element_iterable(self, element_to_interact):
         self.selib.wait_until_page_contains_element(element_to_interact, self.wait_timeout)
@@ -22,6 +23,15 @@ class BasePage(PageObject):
     def input_text(self, element_to_interact, text):
         self.wait_element_iterable(element_to_interact)
         self.selib.input_text(element_to_interact, text)
+
+    def exec_javascript(self, element_to_interact, trigger_event):
+        with open('jquery.min.js', 'r') as jquery_js:  # read the jquery from a file
+            jquery = jquery_js.read()
+            self.selib.execute_javascript(jquery)
+
+        web_element = self.selib.find_element(element_to_interact)
+        js = "$(arguments[0]).trigger(\"%s\");" % trigger_event
+        self.selib.execute_javascript('ARGUMENTS', web_element, 'JAVASCRIPT', js)
 
     def select_from_list_by_index(self, element_to_interact, index):
         self.wait_element_iterable(element_to_interact)
