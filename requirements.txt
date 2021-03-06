@@ -5,4 +5,5 @@ robotframework-seleniumlibrary>=4.1.0
 robotframework-selenium2library>=3.0.0
 robotframework-pageobjectlibrary>=1.0.2
 
-
+coloredlogs~=15.0
+features~=0.5.12

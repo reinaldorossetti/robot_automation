@@ -1,15 +1,24 @@
+import logging
+import coloredlogs
 from PageObjectLibrary import PageObject
 import re
-import logging
 
-logger = logging.getLogger()
-
+fileh = logging.FileHandler('logfile_execution', 'a')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fileh.setFormatter(formatter)
+log = logging.getLogger()
+for hdlr in log.handlers[:]:  # remove all old handlers
+    log.removeHandler(hdlr)
+log.addHandler(fileh)
 
 class BasePage(PageObject):
 
     def __init__(self, timeout=30):
         super().__init__()
         self.wait_timeout = timeout
+        coloredlogs.install()
+        self.logger("Timeout: %s" % timeout)
+
 
     def wait_element_iterable(self, element_to_interact):
         self.selib.wait_until_page_contains_element(element_to_interact, self.wait_timeout)
@@ -41,5 +50,4 @@ class BasePage(PageObject):
     @staticmethod
     def convert_to_float(value):
         value_output = re.findall(r"\d*.\d*", value)
-        logger.debug(value_output)
         return float(value_output[0].replace(',', '.'))

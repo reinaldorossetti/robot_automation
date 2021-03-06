@@ -1,7 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library  ../pages/product_page.py
-Library  ../pages/home_page.py
+Library  ../pages/ProductPage.py
+Library  ../pages/HomePage.py
 
 
 *** Keywords ***
