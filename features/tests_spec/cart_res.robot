@@ -21,5 +21,6 @@ the user select amount of products
     Add Products
     
 the purchase price must be updated in the cart
+    Element Should Contain  css=span[id=pre-checkout-cold-drink-tag]   Suas bebidas já vão geladinhas!
     Calculate Cart
     Capture Page Screenshot
