@@ -15,9 +15,9 @@ the user select amount of products
     Page Should Contain  Cervejas
     Select Product
     Add Amount Product
-    Page Should Contain  6
+    Page Should Contain  06
     Add One Product
-    Page Should Contain  7
+    Page Should Contain  07
     Add Products
     
 the purchase price must be updated in the cart
