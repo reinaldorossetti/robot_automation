@@ -71,13 +71,13 @@ class ProductPage(BasePage):
         self.get_products_value()
         self.get_value_quantity()
 
-        # calculate sub total value
+        # validated the sub total value
         value_output_product = self.convert_to_float(self.product_value2)
         total_value_sub = value_output_product * float(self.quantity)
         value_output_product_str = str(total_value_sub).replace('.', ',')
         self.selib.element_text_should_be(self.locator.sub_product_value, "R$ " + value_output_product_str)
 
-        # calculate total value
+        # validated the total value
         value_output_product = self.convert_to_float(self.sub_product_value)
         value_output_shipping = self.convert_to_float(self.shipping)
         total_value_sub = value_output_product + value_output_shipping
