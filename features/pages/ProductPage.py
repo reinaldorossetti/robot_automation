@@ -44,6 +44,7 @@ class ProductPage(BasePage):
         self.logger.info(self.product_value1)
         self.click_element(self.locator.accept_check)
         self.click_element(self.locator.add_product)
+        self.selib.wait_until_page_does_not_contain(self.locator.add_product)
 
     def get_products_value(self):
         self.check_element_is_visible(self.locator.product_value2)
