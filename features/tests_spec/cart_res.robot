@@ -22,3 +22,4 @@ the user select amount of products
     
 the purchase price must be updated in the cart
     Calculate Cart
+    Capture Page Screenshot

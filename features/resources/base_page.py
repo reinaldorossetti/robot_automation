@@ -1,5 +1,9 @@
 from PageObjectLibrary import PageObject
 import re
+import logging
+
+logger = logging.getLogger()
+
 
 class BasePage(PageObject):
 
@@ -34,6 +38,8 @@ class BasePage(PageObject):
         self.wait_element_iterable(element_to_interact)
         self.selib.get_text(element_to_interact)
 
-    def convert_to_float(self, value):
-        value_output = re.findall("\d*,\d*", value)
+    @staticmethod
+    def convert_to_float(value):
+        value_output = re.findall(r"\d*.\d*", value)
+        logger.debug(value_output)
         return float(value_output[0].replace(',', '.'))
