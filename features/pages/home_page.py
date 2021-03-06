@@ -1,4 +1,7 @@
 from features.resources.base_page import BasePage
+import logging
+
+logger = logging.getLogger()
 
 
 class HomePage(BasePage):
@@ -13,6 +16,7 @@ class HomePage(BasePage):
     }
 
     def gate_yes(self):
+        logger.debug("clique na idade acima dos 18 anos")
         self.click_element(self.locator.button_age_gate_yes)
 
     def inform_address(self, address):
