@@ -75,3 +75,4 @@ Folder Structure Conventions
 > `LICENSE`, `README.md`, requirements.txt, folder pages 
 
 > Use yaml file to store as environment variables and locators, used in the robot files.
+> The project follow Pycharm Python static code analysis tool which looks for programming errors.
