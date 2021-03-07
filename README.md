@@ -16,10 +16,10 @@ I am choose de Card:
 2. Select options 
     - get values
 3. Validated values:
-# validated the product name is same on the shopping cart page.
-# validated the price of the product is the same on the shopping cart page.
-# validated the sub total value
-# validated the total value 
+>> validated the product name is same on the shopping cart page.
+>> validated the price of the product is the same on the shopping cart page.
+>> validated the sub total value
+>> validated the total value 
 
 Extras:
 - Highlight function.
