@@ -26,7 +26,8 @@ I will choose Robot framework because QA use in your tests automation.
 
 Extras:  
 - Highlight function.  
-- Trigger Function - More performance in different browsers.  
+- Trigger Function - More performance in different browsers (performance is critical issue in automation). 
+    >> When the Framework using the non-visible function is very slow.
 - Tested in Firefox and Chrome.  
 - No sleep e slow option, mode fast.  
 - Only one xpath and more IDs.  
