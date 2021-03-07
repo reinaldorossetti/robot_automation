@@ -38,8 +38,9 @@ class HomePage(BasePage):
         js = "$(arguments[0]).css({'border':'5px solid red'}).delay( 800 );"
         self.selib.execute_javascript('ARGUMENTS', web_element, 'JAVASCRIPT', js)
 
+    # read the jquery from a file to insert in site project.
     def set_jquery(self):
         path = os.getcwd()
-        with open(path + '/features/resources/jquery.min.js', 'r') as jquery_js:  # read the jquery from a file
+        with open(path + '/features/resources/jquery.min.js', 'r') as jquery_js:
             jquery = jquery_js.read()
             self.selib.execute_javascript(jquery)

@@ -24,16 +24,6 @@ class BasePage(PageObject):
         self.wait_element_iterable(element_to_interact)
         self.selib.input_text(element_to_interact, text)
 
-    def exec_javascript(self, element_to_interact, trigger_event):
-        # read the jquery from a file to insert in site project.
-        with open('jquery.min.js', 'r') as jquery_js:
-            jquery = jquery_js.read()
-            self.selib.execute_javascript(jquery)
-
-        web_element = self.selib.find_element(element_to_interact)
-        js = "$(arguments[0]).trigger(\"%s\");" % trigger_event
-        self.selib.execute_javascript('ARGUMENTS', web_element, 'JAVASCRIPT', js)
-
     def select_from_list_by_index(self, element_to_interact, index):
         self.wait_element_iterable(element_to_interact)
         self.selib.select_from_list_by_index(element_to_interact, index)
