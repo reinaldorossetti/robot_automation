@@ -12,6 +12,8 @@ Payment: If the payment services need confirmation by cellphone, the purchase ca
 Cart: If the products selected by the user are not being updated and calculated correctly in the cart, it will cause problem in payment.
 
 I will choose the shopping cart to perform the automated tests.
+I will choose Python programming language because the company use in development.
+I will choose Robot framework because QA use in your tests automation.
 
 1. Search the product
 2. Select product and quantity 
