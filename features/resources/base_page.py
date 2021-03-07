@@ -10,8 +10,8 @@ class BasePage(PageObject):
         self.selib.set_selenium_implicit_wait(self.wait_timeout)
 
     def wait_element_iterable(self, element_to_interact):
-        self.selib.wait_until_page_contains_element(element_to_interact, self.wait_timeout)
-        self.selib.wait_until_element_is_visible(element_to_interact, self.wait_timeout)
+        self.selib.wait_until_page_contains_element(element_to_interact)
+        self.selib.wait_until_element_is_visible(element_to_interact)
 
     def click_element(self, element_to_interact):
         self.wait_element_iterable(element_to_interact)
