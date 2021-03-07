@@ -79,7 +79,7 @@ Folder Structure Conventions
     └── requirements.txt            # Libraries to need to install.
 
 > Use short lowercase names at least for the top-level files and folders except
-> `LICENSE`, `README.md`, requirements.txt, folder pages 
+> `LICENSE`, `README.md`, in folder pages the name of pages follow Camel Case.
 
 > Use yaml file to store as environment variables and locators, used in the robot files.
 > The project follow Pycharm Python static code analysis tool which looks for programming errors.
