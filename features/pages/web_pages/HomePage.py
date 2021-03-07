@@ -1,6 +1,7 @@
 from features.resources.base_page import BasePage
 import os
 
+
 class HomePage(BasePage):
     _locators = {
         "button_age_gate_yes": "id=age-gate-button-yes",

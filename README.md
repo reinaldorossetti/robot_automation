@@ -11,15 +11,16 @@ Payment: If the payment services need confirmation by cellphone, the purchase ca
 
 Cart: If the products selected by the user are not being updated and calculated correctly in the cart, it will cause problem in payment.
 
-I am choose de Card:
+I will choose the shopping cart to perform the automated tests.
+
 1. Search the product
-2. Select options 
+2. Select product and quantity 
     - get values
-3. Validated values:  
+3. Validated values on the shopping cart page:  
 >> validated the product name is same on the shopping cart page.  
 >> validated the price of the product is the same on the shopping cart page.  
->> validated the sub total value  
->> validated the total value   
+>> validated the sub total value.  
+>> validated the total value.     
 
 Extras:  
 - Highlight function.  
@@ -28,7 +29,11 @@ Extras:
 - No sleep e slow option, mode fast.  
 - Only one xpath and more IDs.  
 
-1. Dependencies:  
+**Pending TO DO: 
+- mode headless.
+- pipeline file.
+- pages variables and locators in yaml file.
+
 ```
 robotframework>=3.1.2
 robotframework-faker>=4.3.0
@@ -48,3 +53,25 @@ Command line to runner:
 robot -v BROWSER:Chrome -i update_value -d target features
 robot -v BROWSER:Firefox -i update_value -d target features
 ```
+
+Folder Structure Conventions
+============================
+
+> Folder structure and naming conventions for my project.
+
+### A typical top-level directory layout
+    .
+    ├── features                    # Files and folders of framework (root code)
+        ├── commons                 # Commons files to tests spec (global use).
+        ├── pages                   # Source files page object pattern.
+        ├── resources               # Source files to helper tests, the idea is to reduce code.
+        ├── tests_spec              # Specification of what the tests should do and runner of tests.
+    ├── .gitignore                  # Files and Folders to ignore in repository.
+    ├── LICENSE
+    ├── README.md                   # Documentation of project.
+    └── requirements.txt            # Libraries to need to install.
+
+> Use short lowercase names at least for the top-level files and folders except
+> `LICENSE`, `README.md`, requirements.txt, folder pages 
+
+> Use yaml file to store as environment variables and locators, used in the robot files.

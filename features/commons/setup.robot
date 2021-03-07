@@ -1,10 +1,10 @@
 *** Settings ***
-Library  SeleniumLibrary
-Library  BuiltIn
+Library     SeleniumLibrary
+Library     BuiltIn
 
 *** Keywords ***
 Go to site
     Create WebDriver                     ${BROWSER}
-    Go to                                https://www.ze.delivery/
+    Go to                                ${URL}
     Maximize Browser Window
-    Set Selenium Implicit Wait	         20 seconds
+    Set Selenium Implicit Wait	         ${WAIT_MAX}
