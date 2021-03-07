@@ -25,7 +25,8 @@ class BasePage(PageObject):
         self.selib.input_text(element_to_interact, text)
 
     def exec_javascript(self, element_to_interact, trigger_event):
-        with open('jquery.min.js', 'r') as jquery_js:  # read the jquery from a file
+        # read the jquery from a file to insert in site project.
+        with open('jquery.min.js', 'r') as jquery_js:
             jquery = jquery_js.read()
             self.selib.execute_javascript(jquery)
 
