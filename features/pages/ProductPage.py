@@ -10,6 +10,8 @@ class ProductPage(BasePage):
         "add_product": "id=product-amount",
         "product_amount1": "css=div[class*=productContainer] div[class*=containerAddCustomButton] div[id*=amount]",
         "product_amount2": "id=product-amount",
+        "product_name1": "css=div[id*=next] div[class*=productTitle]",
+        "product_name2": "css=div[id=product-card] div[class*=productTitle]",
         "product_value1": "css=div[class*=priceText]",
         "product_value2": "css=#product-card-price div",
         "sub_product_value": "id=subtotal",
@@ -28,6 +30,7 @@ class ProductPage(BasePage):
         self.sub_product_value = ""
         self.quantity = 0
         self.shipping = ""
+        self.product_name1 = ""
 
     def select_product(self):
         self.click_element(self.locator.select_product)
@@ -40,6 +43,7 @@ class ProductPage(BasePage):
 
     def add_products(self):
         self.product_amount1 = self.selib.get_text(self.locator.product_amount1)
+        self.product_name1 = self.selib.get_text(self.locator.product_name1)
         self.product_value1 = self.selib.get_text(self.locator.product_value1)
         self.logger.info(self.product_value1)
         self.click_element(self.locator.accept_check)
@@ -69,6 +73,9 @@ class ProductPage(BasePage):
     def calculate_cart(self):
         self.get_products_value()
         self.get_value_quantity()
+
+        # validated the product name
+        self.selib.element_text_should_be(self.locator.product_name2, self.product_name1)
 
         # validated the sub total value
         value_output_product = self.convert_to_float(self.product_value2)
