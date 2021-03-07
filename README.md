@@ -85,10 +85,10 @@ Folder Structure Conventions
 > The project follow Pycharm Python static code analysis tool which looks for programming errors.  
 > The Variables that are not mutable must follow upcase in python by default.  
 
-References:
-https://pypi.org/project/robotframework-pageobjectlibrary/
-https://libraries.io/pypi/robotframework-pageobjectlibrary
-https://github.com/boakley/robotframework-pageobjectlibrary/
+References:  
+https://pypi.org/project/robotframework-pageobjectlibrary    
+https://libraries.io/pypi/robotframework-pageobjectlibrary  
+https://github.com/boakley/robotframework-pageobjectlibrary  
 
-Udemy Course >> WEB Testing Avançado >> Follow use the page object:
-https://www.udemy.com/course/automacao-de-testes-com-robot-framework-avancado/
+Udemy Course >> WEB Testing Avançado >> Follow use the page object:  
+https://www.udemy.com/course/automacao-de-testes-com-robot-framework-avancado  
