@@ -15,20 +15,20 @@ I am choose de Card:
 1. Search the product
 2. Select options 
     - get values
-3. Validated values:
->> validated the product name is same on the shopping cart page.
->> validated the price of the product is the same on the shopping cart page.
->> validated the sub total value
->> validated the total value 
+3. Validated values:  
+>> validated the product name is same on the shopping cart page.  
+>> validated the price of the product is the same on the shopping cart page.  
+>> validated the sub total value  
+>> validated the total value   
 
-Extras:
-- Highlight function.
-- Trigger Function - More performance in different browsers.
-- Tested in Firefox and Chrome.
-- No sleep e slow option, mode fast.
-- Only one xpath and more IDs.
+Extras:  
+- Highlight function.  
+- Trigger Function - More performance in different browsers.  
+- Tested in Firefox and Chrome.  
+- No sleep e slow option, mode fast.  
+- Only one xpath and more IDs.  
 
-1. Dependencies:
+1. Dependencies:  
 ```
 robotframework>=3.1.2
 robotframework-faker>=4.3.0
