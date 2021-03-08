@@ -1,6 +1,6 @@
 *** Settings ***
-Resource  cart_steps_spec.robot
 Resource  ../../resources/imports.robot
+Resource  cart_steps_spec.robot
 
 Test Setup      Go to site
 Test Teardown   Close

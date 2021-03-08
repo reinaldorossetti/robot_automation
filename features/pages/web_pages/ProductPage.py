@@ -1,4 +1,4 @@
-from features.resources.base_page import BasePage
+from features.pages.web_pages.base.base_page import BasePage
 
 
 class ProductPage(BasePage):

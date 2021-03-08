@@ -61,6 +61,13 @@ robot -v BROWSER:Firefox -i update_value -d target features
 https://chromedriver.chromium.org/downloads  
 https://github.com/mozilla/geckodriver/releases  
 
+Setting PYTHONPATH can also help the problem in imports.
+
+Here is how it can be done on Windows
+```
+set PYTHONPATH=.
+```
+
 Folder Structure Conventions
 ============================
 
