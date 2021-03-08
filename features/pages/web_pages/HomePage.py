@@ -1,5 +1,6 @@
+import yaml
+from os import path, getcwd
 from features.resources.base_page import BasePage
-import os
 
 
 class HomePage(BasePage):
@@ -13,6 +14,11 @@ class HomePage(BasePage):
         "adress_button_continue": "id=address-details-button-continue",
     }
 
+    def __init__(self):
+        super().__init__()
+        self.path_mass_page = path.join(getcwd() + "/features/resources/mass_of_pages/mass_of_pages.yaml")
+        self.COMPLEMENT = self.read_yaml(self.path_mass_page, 'COMPLEMENT')
+
     def gate_yes(self):
         self.click_element(self.locator.button_age_gate_yes)
 
@@ -23,7 +29,7 @@ class HomePage(BasePage):
         self.input_text(self.locator.input_address, address)
         self.click_element(self.locator.address)
         self.highlight(self.locator.address_details_input_complement)
-        self.input_text(self.locator.address_details_input_complement, 'Na Casa de Esquina')
+        self.input_text(self.locator.address_details_input_complement, self.COMPLEMENT)
         self.click_element(self.locator.adress_button_continue)
 
     def trigger_event(self, element_to_interact, trigger_event):
@@ -40,7 +46,12 @@ class HomePage(BasePage):
 
     # read the jquery from a file to insert in site project.
     def set_jquery(self):
-        path = os.getcwd()
-        with open(path + '/features/resources/jquery.min.js', 'r') as jquery_js:
+        with open(getcwd() + '/features/resources/jquery.min.js', 'r') as jquery_js:
             jquery = jquery_js.read()
             self.selib.execute_javascript(jquery)
+
+    @staticmethod
+    def read_yaml(file, content):
+        with open(file) as file:
+            data = yaml.load(file, Loader=yaml.FullLoader)
+        return data[content]

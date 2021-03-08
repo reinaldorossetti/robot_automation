@@ -37,9 +37,9 @@ Extras:
 - pipeline file.
 - pages variables and locators in yaml file.
 
+Dependencies of project:
 ```
 robotframework>=3.1.2
-robotframework-faker>=4.3.0
 robotframework-seleniumlibrary>=4.1.0
 robotframework-selenium2library>=3.0.0
 robotframework-pageobjectlibrary>=1.0.2

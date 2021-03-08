@@ -1,5 +1,4 @@
 *** Settings ***
-Library     SeleniumLibrary
 Library     BuiltIn
 
 *** Keywords ***

@@ -1,5 +1,4 @@
 *** Settings ***
-Library  SeleniumLibrary
 Library  ../../pages/web_pages/ProductPage.py
 Library  ../../pages/web_pages/HomePage.py
 
