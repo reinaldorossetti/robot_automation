@@ -57,7 +57,7 @@ robot -v BROWSER:Chrome -i update_value -d target features
 robot -v BROWSER:Firefox -i update_value -d target features
 ```
 
-** Do you need download the drivers to python script folder, compatible with your browser version:
+** Do you need download the drivers to python script folder, compatible with your browser version:  
 https://chromedriver.chromium.org/downloads  
 https://github.com/mozilla/geckodriver/releases  
 

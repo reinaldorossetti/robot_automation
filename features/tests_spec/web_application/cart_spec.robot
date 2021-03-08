@@ -7,8 +7,8 @@ Test Teardown   Close
 
 *** Test Case ***
 
-update cart value
+validating cart page values
     [Tags]  update_value
     Given that the informed region is eligible
     When the user select amount of products
-    Then the purchase price must be updated in the cart
+    Then the purchase price must be added in the cart
