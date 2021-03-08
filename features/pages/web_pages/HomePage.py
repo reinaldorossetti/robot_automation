@@ -53,5 +53,5 @@ class HomePage(BasePage):
     @staticmethod
     def read_yaml(file, content):
         with open(file) as file:
-            data = yaml.load(file, Loader=yaml.FullLoader)
+            data = yaml.safe_load(file)
         return data[content]
