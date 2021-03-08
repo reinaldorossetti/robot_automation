@@ -4,16 +4,16 @@ Project Test with Robot Framework using Page Objects pattern.
 
 3 important flows in Zé Delivery site. I've identified these:
 
-Address Registration: If the user can't enter address, he will not know if the Zé delivery service will be available in his region. 
-And if it's available, the products will not be displayed in this case.
+Address Registration: If the user can't enter address, he will not know if the Zé delivery service will be available in his region.   
+And if it's available, the products will not be displayed in this case.  
 
-Payment: If the payment services need confirmation by cellphone, the purchase can't be completed and the order can't be created.
+Payment: If the payment services need confirmation by cellphone, the purchase can't be completed and the order can't be created.  
 
-Cart: If the products selected by the user are not being updated and calculated correctly in the cart, it will cause problem in payment.
+Cart: If the products selected by the user are not being updated and calculated correctly in the cart, it will cause problem in payment.  
 
-I will choose the shopping cart to perform the automated tests.
-I will choose Python programming language because the company use in development.
-I will choose Robot framework because QA use in your tests automation.
+I will choose the shopping cart to perform the automated tests.  
+I will choose Python programming language because the company use in development.  
+I will choose Robot framework because QA use in your tests automation.  
 
 1. Search the product
 2. Select product and quantity 
@@ -26,8 +26,8 @@ I will choose Robot framework because QA use in your tests automation.
 
 Extras:  
 - Highlight function.  
-- Trigger Function - More performance in different browsers (performance is critical issue in automation). 
-    >> When the Framework using the non-visible function is very slow.
+- Trigger Function - More performance in different browsers (performance is critical issue in automation).   
+    >> When the Framework using the non-visible function is very slow.  
 - Tested in Firefox and Chrome.  
 - No sleep e slow option, mode fast.  
 - Only one xpath and more IDs.  
@@ -58,8 +58,8 @@ robot -v BROWSER:Firefox -i update_value -d target features
 ```
 
 ** Do you need download the drivers to python script folder, compatible with your browser version:
-https://chromedriver.chromium.org/downloads
-https://github.com/mozilla/geckodriver/releases
+https://chromedriver.chromium.org/downloads  
+https://github.com/mozilla/geckodriver/releases  
 
 Folder Structure Conventions
 ============================
@@ -78,8 +78,17 @@ Folder Structure Conventions
     ├── README.md                   # Documentation of project.
     └── requirements.txt            # Libraries to need to install.
 
-> Use short lowercase names at least for the top-level files and folders except
-> `LICENSE`, `README.md`, requirements.txt, folder pages 
+> Use short lowercase names at least for the top-level files and folders except  
+> `LICENSE`, `README.md`, in folder pages the name of pages follow Camel Case.  
 
-> Use yaml file to store as environment variables and locators, used in the robot files.
-> The project follow Pycharm Python static code analysis tool which looks for programming errors.
+> Use yaml file to store as environment variables and locators, used in the robot files.  
+> The project follow Pycharm Python static code analysis tool which looks for programming errors.  
+> The Variables that are not mutable must follow upcase in python by default.  
+
+References:  
+https://pypi.org/project/robotframework-pageobjectlibrary    
+https://libraries.io/pypi/robotframework-pageobjectlibrary  
+https://github.com/boakley/robotframework-pageobjectlibrary  
+
+Udemy Course >> WEB Testing Avançado >> Follow use the page object:  
+https://www.udemy.com/course/automacao-de-testes-com-robot-framework-avancado  
