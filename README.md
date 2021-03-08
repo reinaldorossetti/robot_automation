@@ -47,6 +47,7 @@ robotframework-pageobjectlibrary>=1.0.2
 
 How to install:
 ```
+ git clone https://github.com/reinaldorossetti/robot_automation_ui.git
  cd robot_automation_ui   
  pip install -r requirements.txt
 ```
@@ -71,6 +72,7 @@ Linux:
 ```
 export PYTHONPATH=.
 ```
+** If Set PYTHONPATH need set python path in SO system path variables.
 
 Folder Structure Conventions
 ============================
@@ -95,6 +97,8 @@ Folder Structure Conventions
 > Use yaml file to store as environment variables and locators, used in the robot files.  
 > The project follow Pycharm Python static code analysis tool which looks for programming errors.  
 > The Variables that are not mutable must follow upcase in python by default.  
+
+** This project follow the best pratices, below refences of the same.
 
 References:  
 https://pypi.org/project/robotframework-pageobjectlibrary    
