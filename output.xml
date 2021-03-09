@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on win32)" generated="20210308 22:25:09.171" rpa="false">
+<suite id="s1" name="Weather Steps Spec" source="C:\GitHub\robot_automation_ui\features\tests_spec\api_application\weather_steps_spec.robot">
+<test id="s1-t1" name="Checking the weather by city">
+<kw name="When send a request about the city weather" library="weather_spec">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>q=${city}</arg>
+<arg>appid=${API_KEY}</arg>
+</arguments>
+<assign>
+<var>&amp;{params}</var>
+</assign>
+<msg timestamp="20210308 22:25:09.372" level="FAIL">Variable '${API_KEY}' not found.</msg>
+<status status="FAIL" starttime="20210308 22:25:09.371" endtime="20210308 22:25:09.372"></status>
+</kw>
+<status status="FAIL" starttime="20210308 22:25:09.371" endtime="20210308 22:25:09.372"></status>
+</kw>
+<tags>
+<tag>update_value</tag>
+</tags>
+<status status="FAIL" starttime="20210308 22:25:09.370" endtime="20210308 22:25:09.372" critical="yes">Variable '${API_KEY}' not found.</status>
+</test>
+<status status="FAIL" starttime="20210308 22:25:09.173" endtime="20210308 22:25:09.373"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">update_value</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Weather Steps Spec">Weather Steps Spec</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,3 +1,4 @@
+import robot
 from PageObjectLibrary import PageObject
 import re
 
@@ -9,6 +10,7 @@ class BasePage(PageObject):
         self.wait_timeout = timeout
         self.selib.set_selenium_implicit_wait(self.wait_timeout)
         self.selib.set_selenium_timeout(self.wait_timeout)
+        self.logger = robot.api.logger
 
     def wait_element_iterable(self, element_to_interact):
         self.selib.wait_until_page_contains_element(element_to_interact)
@@ -37,7 +39,7 @@ class BasePage(PageObject):
         self.wait_element_iterable(element_to_interact)
         self.selib.get_text(element_to_interact)
 
-    @staticmethod
-    def convert_to_float(value):
-        value_output = re.findall(r"\d*.\d*", value)
+    def convert_to_float(self, string):
+        value_output = re.findall(r'[0-9,]+', string)
+        self.logger.info(value_output)
         return float(value_output[0].replace(',', '.'))
