@@ -1,6 +1,6 @@
 *** Settings ***
-Resource  ../../resources/imports_web.robot
-Resource  cart_steps_spec.robot
+Resource  ../../pages/resources/imports_web.robot
+Resource  ../../steps_definitions/web_application/cart_steps_spec.robot
 
 Test Setup      Go to site
 Test Teardown   Close

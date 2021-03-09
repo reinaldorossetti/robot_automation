@@ -10,6 +10,6 @@ Then validating the Response's success data
     Log                                 Response: ${RESPONSE.text}
     Log To Console                      Response: ${RESPONSE.text}
     Should Not Be Empty                 ${RESPONSE.json()}
-    Dictionary Should Contain Item      ${RESPONSE.json()}      country     ${COUNTRY}
-    Dictionary Should Contain Item       ${RESPONSE.json()}      coord      ${COORDINATES}
-    Dictionary Should Contain Item      ${RESPONSE.json()}      name        ${CITY}
+    Dictionary Should Contain Item      ${RESPONSE.json()["sys"]}        country     ${COUNTRY}
+    Dictionary Should Contain Item      ${RESPONSE.json()["coord"]}      coord       ${COORDINATES}
+    Dictionary Should Contain Item      ${RESPONSE.json()["sys"]}        name        ${CITY}

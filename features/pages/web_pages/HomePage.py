@@ -16,7 +16,7 @@ class HomePage(BasePage):
 
     def __init__(self):
         super().__init__()
-        self.path_mass_page = path.join(getcwd() + "/features/resources/mass_of_pages/mass_of_pages.yaml")
+        self.path_mass_page = path.join(getcwd() + "/features/pages/web_pages/mass_of_pages/mass_of_pages.yaml")
         self.COMPLEMENT = self.read_yaml(self.path_mass_page, 'COMPLEMENT')
 
     def gate_yes(self):
@@ -46,7 +46,7 @@ class HomePage(BasePage):
 
     # read the jquery from a file to insert in site project.
     def set_jquery(self):
-        with open(getcwd() + '/features/resources/jquery.min.js', 'r') as jquery_js:
+        with open(getcwd() + '/features/pages/resources/jquery.min.js', 'r') as jquery_js:
             jquery = jquery_js.read()
             self.selib.execute_javascript(jquery)
 

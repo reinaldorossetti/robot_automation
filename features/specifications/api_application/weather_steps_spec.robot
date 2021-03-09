@@ -2,7 +2,7 @@
 Library            Collections
 Library            RequestsLibrary
 Resource           weather_spec.robot
-Resource           ../../resources/imports_api.robot
+Resource           ../../pages/resources/imports_api.robot
 
 *** Test Case ***
 
