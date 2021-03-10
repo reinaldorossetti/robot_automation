@@ -6,7 +6,8 @@ ${LATITUDE}                    -23.5475
 ${ZIP_CODE_US}                 94040,us
 ${BBOX}                        12,32,15,37,10
 ${CNT}                         10
-
+${LANGUAGE}                    sp
+${MSN_INVALID_KEY}             "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."
 *** Keywords ***
 
 Given I start the session
@@ -32,6 +33,9 @@ Then expect API response will be code
     Log                                 Response: ${RESPONSE.text}
     Log To Console                      Response: ${RESPONSE.text}
     Should Be Equal As Strings          ${RESPONSE.status_code}                     ${STATUS_CODE}
+
+Then validating the Response's success country
+    Dictionary Should Contain Item      ${RESPONSE.json()["temp"]}       country     ${COUNTRY}
 
 When send a request about the city weather by id
     &{params}=   Create Dictionary   id=${ID_CITY}     appid=${API_KEY}
@@ -68,3 +72,31 @@ When send a request about weather by cities in circle
 
     ${RESPONSE}      GET On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
     Set Test Variable   ${RESPONSE}
+
+When send a request about multilingual support
+    &{params}=   Create Dictionary   id=${ID_CITY}      lang=${LANGUAGE}     appid=${API_KEY}
+
+    ${RESPONSE}      GET On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
+    Set Test Variable   ${RESPONSE}
+
+When send a request about call back support
+    &{params}=   Create Dictionary   q=${city}      callback=test     appid=${API_KEY}
+
+    ${RESPONSE}      GET On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
+    Set Test Variable   ${RESPONSE}
+
+When send a request about Units of measurement
+    [Arguments]                         ${UNITS}
+    &{params}=   Create Dictionary   q=${city}      units=${UNITS}    appid=${API_KEY}
+
+    ${RESPONSE}      GET On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
+    Set Test Variable   ${RESPONSE}
+
+When send a request within invalid api key
+    &{params}=   Create Dictionary   q=${city}     appid=${API_KEY_INCORRETA}
+
+    ${RESPONSE}      GET On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
+    Set Test Variable   ${RESPONSE}
+
+Then validate error message for invalid api key
+    Dictionary Should Contain Item      ${RESPONSE.json()}       message     ${MSN_INVALID_KEY}
