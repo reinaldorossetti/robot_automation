@@ -1,22 +1,24 @@
 *** Settings ***
 Library            Collections
 Library            RequestsLibrary
-Resource           weather_spec.robot
+Resource           ../../steps_definitions/api/weather_spec.robot
 Resource           ../../pages/resources/imports_api.robot
+Force Tags         api_tests
 
 *** Test Case ***
 
 Checking the weather by city
-    [Tags]  update_value
+    [Tags]  weather_by_city
+    Given I start the session
     When send a request about the city weather
     Then validating the Response's success data
 
-#Consult weather by id
-#    [Tags] consultById
-#        Given address of API to consult weather
-#        When send a request about weather in São Paulo by id
-#        Then expect API response will be code 200
-#
+Checking the weather by id
+    [Tags]  weather_by_id
+    Given I start the session
+    When send a request about the city weather by id
+    Then validating the Response's success data
+
 #Consult weather by longitude and latitude
 #    [Tags] consultByLonLat
 #        Given address of API to consult weather

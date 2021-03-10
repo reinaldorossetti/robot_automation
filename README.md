@@ -15,35 +15,28 @@ I will choose the shopping cart to perform the automated tests.
 I will choose Python programming language because the company use in development.  
 I will choose Robot framework because QA use in your tests automation.  
 
+The idea is to do a simple test, for Zé Delivery company, following good practices.
 1. Search the product
 2. Select product and quantity 
-    - get values
+    >> get values
 3. Validated values on the shopping cart page:  
->> validated the product name is same on the shopping cart page.  
->> validated the price of the product is the same on the shopping cart page.  
->> validated the sub total value.  
->> validated the total value.     
+    >> validated the product name is same on the shopping cart page.  
+    >> validated the price of the product is the same on the shopping cart page.  
+    >> validated the sub total value.  
+    >> validated the total value.     
 
 Extras:  
 - Highlight function.  
 - Trigger Function - More performance in different browsers (performance is critical issue in automation).   
     >> When the Framework using the non-visible function is very slow.  
 - Tested in Firefox and Chrome.  
-- No sleep e slow option, mode fast.  
+- No have sleep e slow option, mode fast.  
 - Only one xpath and more IDs.  
 
 **Pending TO DO: 
 - mode headless.
 - pipeline file.
 - pages variables and locators in yaml file.
-
-Dependencies of project:
-```
-robotframework>=3.1.2
-robotframework-seleniumlibrary>=4.1.0
-robotframework-selenium2library>=3.0.0
-robotframework-pageobjectlibrary>=1.0.2
-```
 
 How to install:
 ```
@@ -52,40 +45,48 @@ How to install:
  pip install -r requirements.txt
 ```
 
-Command line to runner:
+** Setting PYTHONPATH:
+
+Windows:
 ```
-robot -v BROWSER:Chrome -i update_value -d target features
-robot -v BROWSER:Firefox -i update_value -d target features
+set PYTHONPATH=%PYTHONPATH%;.;
+```
+Linux: 
+```
+export PYTHONPATH=%PYTHONPATH%;.;
+```
+** If Set PYTHONPATH need set python path in SO system path variables.
+
+Command line to runner:
+
+Web features:
+```
+robot --loglevel DEBUG:INFO -v BROWSER:Chrome  -d my_reports -i cart_page ./
+robot --loglevel DEBUG:INFO -v BROWSER:Firefox -d my_reports -i cart_page ./
+```
+Api features:
+```
+robot --loglevel DEBUG:INFO -v BROWSER:Chrome  -d my_reports -i api_tests ./
 ```
 
 ** Do you need download the drivers to python script folder, compatible with your browser version:  
 https://chromedriver.chromium.org/downloads  
 https://github.com/mozilla/geckodriver/releases  
 
-** Problem in imports, setting PYTHONPATH can also help.
-
-Here is how it can be done on Windows:
-```
-set PYTHONPATH=.
-```
-Linux: 
-```
-export PYTHONPATH=.
-```
-** If Set PYTHONPATH need set python path in SO system path variables.
 
 Folder Structure Conventions
 ============================
 
 > Folder structure and naming conventions for my project.
 
-### A typical top-level directory layout
+### A typical cucumber directory pattern.
     .
     ├── features                    # Files and folders of framework (root code)
         ├── commons                 # Commons files to tests spec (global use).
         ├── pages                   # Source files page object pattern.
-        ├── resources               # Source files to helper tests, the idea is to reduce code.
-        ├── tests_spec              # Specification of what the tests should do and runner of tests.
+            ├── resorces            # Source files to helper pages, the idea is to reduce code.
+        ├── steps_definitios        # Step by step of tests.
+        ├── specifications          # Specification of what the tests should do and runner of tests.
     ├── .gitignore                  # Files and Folders to ignore in repository.
     ├── LICENSE
     ├── README.md                   # Documentation of project.
@@ -99,6 +100,16 @@ Folder Structure Conventions
 > The Variables that are not mutable must follow upcase in python by default.  
 
 ** This project follow the best pratices, below refences of the same.
+
+Dependencies of project:
+```
+robotframework-requests
+robotframework=3.1.2
+robotframework-seleniumlibrary>=4.1.0
+robotframework-selenium2library>=3.0.0
+robotframework-pageobjectlibrary>=1.0.2
+pyyaml==3.12
+```
 
 References:  
 https://pypi.org/project/robotframework-pageobjectlibrary    
