@@ -1,13 +1,6 @@
 *** Variable ***
-${ID_CITY}                     3448439
-${STATUS_ESPERADO}             200
-${LONGITUDE}                   -46.6361
-${LATITUDE}                    -23.5475
-${ZIP_CODE_US}                 94040,us
-${BBOX}                        12,32,15,37,10
-${CNT}                         10
-${LANGUAGE}                    sp
-${MSN_INVALID_KEY}             "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."
+
+
 *** Keywords ***
 
 Given I start the session
