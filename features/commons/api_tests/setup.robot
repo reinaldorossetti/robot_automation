@@ -11,6 +11,7 @@ ${STATUS_ESPERADO}              200
 ${LONGITUDE}                    -46.6361
 ${LATITUDE}                     -23.5475
 ${ZIP_CODE_US}                  94040,us
+${ZIP_CODE_FAIL}                040,us
 ${BBOX}                         12,32,15,37,10
 ${CNT}                          10
 ${LANGUAGE}                     sp
