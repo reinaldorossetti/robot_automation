@@ -15,4 +15,3 @@ ${ZIP_CODE_FAIL}                040,us
 ${BBOX}                         12,32,15,37,10
 ${CNT}                          10
 ${LANGUAGE}                     sp
-${MSN_INVALID_KEY}              "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."

@@ -18,6 +18,7 @@ class BasePage(PageObject):
 
     def click_element(self, element_to_interact):
         self.wait_element_iterable(element_to_interact)
+        self.selib.set_focus_to_element(element_to_interact)
         self.selib.click_element(element_to_interact)
 
     def check_element_is_visible(self, element_to_interact):

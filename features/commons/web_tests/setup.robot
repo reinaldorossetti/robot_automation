@@ -3,7 +3,7 @@ Library     BuiltIn
 
 *** Keywords ***
 Go to site
-    Create WebDriver                     ${BROWSER}
+    Open Browser     about:blank         ${BROWSER}
     Go to                                ${URL}
     Maximize Browser Window
     Set Selenium Implicit Wait	         ${WAIT_MAX}

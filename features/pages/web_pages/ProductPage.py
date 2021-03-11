@@ -34,6 +34,7 @@ class ProductPage(BasePage):
 
     def select_product(self):
         self.click_element(self.locator.select_product)
+        self.check_element_is_visible(self.locator.add_amount_six)
 
     def add_amount_product(self):
         self.click_element(self.locator.add_amount_six)

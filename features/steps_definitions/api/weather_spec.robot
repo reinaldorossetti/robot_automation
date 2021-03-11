@@ -85,7 +85,7 @@ When send a request about Units of measurement
 When send a request within invalid api key
     &{params}=   Create Dictionary   q=${city}     appid=${API_KEY_INCORRETA}
 
-    ${RESPONSE}      GET On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
+    ${RESPONSE}=      Post On Session  ${SESSION}   ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}      expected_status=any
     Set Test Variable   ${RESPONSE}
 
 Then validate error message for invalid api key

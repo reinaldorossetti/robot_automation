@@ -1,1 +1,2 @@
 LOCATOR_MSN_COLD_DRINK: css=span[id=pre-checkout-cold-drink-tag]
+ELEMENT_COOKIES: css=button[aria-label*="cookies"]

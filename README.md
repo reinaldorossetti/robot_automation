@@ -45,7 +45,7 @@ How to install:
  pip install -r requirements.txt
 ```
 
-** Setting PYTHONPATH:
+** Setting PYTHONPATH inside project:
 
 Windows:
 ```
@@ -63,10 +63,12 @@ Web features:
 ```
 robot --loglevel DEBUG:INFO -v BROWSER:Chrome  -d my_reports -i cart_page ./
 robot --loglevel DEBUG:INFO -v BROWSER:Firefox -d my_reports -i cart_page ./
+robot --loglevel DEBUG:INFO -v BROWSER:headlessfirefox -d my_reports -i cart_page ./
+robot --loglevel DEBUG:INFO -v BROWSER:headlesschrome -d my_reports -i cart_page ./
 ```
 Api features:
 ```
-robot --loglevel DEBUG:INFO -v BROWSER:Chrome  -d my_reports -i api_tests ./
+robot --loglevel DEBUG:INFO -d my_reports -i api_tests ./   add_argument    --start-maximized
 ```
 
 ** Do you need download the drivers to python script folder, compatible with your browser version:  

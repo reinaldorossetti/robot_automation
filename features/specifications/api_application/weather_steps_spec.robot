@@ -32,10 +32,10 @@ Checking weather by zip code
     Then expect API response will be code   200
 
 Checking weather by not found zip code
-    [Tags] weather_zipcode_notfound
+    [Tags]  weather_zipcode_fail
     Given I start the session
     When send a request about weather by zip code wrong
-    Then expect API response will be code   404
+    Then expect API response will be code   401
 
 Checking cities within a rectangle zone
     [Tags]  weather_rectangle_zone
@@ -84,4 +84,3 @@ Search weather data by city name with invalid api key
     Given I start the session
     When send a request within invalid api key
     Then validate error message for invalid api key
-    Then expect API error response will be    401
