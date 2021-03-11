@@ -1,4 +1,4 @@
-# robot_automation_ui
+# robot_automation
 
 Project Test with Robot Framework using Page Objects pattern.
 
