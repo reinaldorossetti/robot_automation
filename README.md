@@ -32,11 +32,12 @@ Extras:
 - Tested in Firefox and Chrome.  
 - No have sleep e slow option, mode fast.  
 - Only one xpath and more IDs.  
+- mode headless tested.
 
 **Pending TO DO: 
-- mode headless.
 - pipeline file.
 - pages variables and locators in yaml file.
+- API testing refactoring.
 
 How to install:
 ```
