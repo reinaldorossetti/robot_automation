@@ -86,7 +86,7 @@ Folder Structure Conventions
     ├── features                    # Files and folders of framework (root code)
         ├── commons                 # Commons files to tests spec (global use).
         ├── pages                   # Source files page object pattern.
-            ├── resorces            # Source files to helper pages, the idea is to reduce code.
+            ├── resources            # Source files to helper pages, the idea is to reduce code.
         ├── steps_definitios        # Step by step of tests.
         ├── specifications          # Specification of what the tests should do and runner of tests.
     ├── .gitignore                  # Files and Folders to ignore in repository.

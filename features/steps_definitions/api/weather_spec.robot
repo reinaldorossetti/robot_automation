@@ -42,7 +42,7 @@ When send a request about weather by longitude and latitude
 When send a request about weather by zip code wrong
     &{params}=   Create Dictionary   zip=${ZIP_CODE_FAIL}     appid=${API_KEY}
 
-    ${RESPONSE}      GET On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
+    ${RESPONSE}      POST On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}     expected_status=any
     Set Test Variable   ${RESPONSE}
 
 When send a request about weather by zip code us

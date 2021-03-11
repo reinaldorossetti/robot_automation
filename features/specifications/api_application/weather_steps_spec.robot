@@ -35,7 +35,7 @@ Checking weather by not found zip code
     [Tags]  weather_zipcode_fail
     Given I start the session
     When send a request about weather by zip code wrong
-    Then expect API response will be code   401
+    Then expect API response will be code    404
 
 Checking cities within a rectangle zone
     [Tags]  weather_rectangle_zone
