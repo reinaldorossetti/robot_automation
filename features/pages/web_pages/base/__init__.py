@@ -1,2 +1,0 @@
-def BasePage():
-    return None
