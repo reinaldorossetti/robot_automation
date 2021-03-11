@@ -68,7 +68,7 @@ robot --loglevel DEBUG:INFO -v BROWSER:headlesschrome -d my_reports -i cart_page
 ```
 Api features:
 ```
-robot --loglevel DEBUG:INFO -d my_reports -i api_tests ./   add_argument    --start-maximized
+robot --loglevel DEBUG:INFO -d my_reports -i api_tests ./  
 ```
 
 ** Do you need download the drivers to python script folder, compatible with your browser version:  
