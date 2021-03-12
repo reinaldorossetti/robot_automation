@@ -1,7 +1,7 @@
 *** Settings ***
 Library            Collections
 Library            RequestsLibrary
-Resource           ../../steps_definitions/api/weather_spec.robot
+Resource           ../../steps_definitions/api/weather_steps_call.robot
 Resource           ../../pages/resources/imports_api.robot
 Force Tags         api_tests
 

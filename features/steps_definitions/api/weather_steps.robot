@@ -3,10 +3,16 @@
 Given I start the session
     Create Session  ${SESSION}  ${HOST_BASE}    headers=${HEADER}     disable_warnings=True
 
-When send a request about the city weather
+Setting the parameters for city weather test
     &{params}=   Create Dictionary   q=${city}     appid=${API_KEY}
+    Set Global Variable     &{params}
 
+Setting session to weather using GET method
     ${RESPONSE}      GET On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
+    Set Test Variable   ${RESPONSE}
+
+Setting session to weather using POST method
+    ${RESPONSE}      POST On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
     Set Test Variable   ${RESPONSE}
 
 Then validating the Response's success data
@@ -27,11 +33,9 @@ Then expect API response will be code
 Then validating the Response's success country
     Dictionary Should Contain Item      ${RESPONSE.json()["temp"]}       country     ${COUNTRY}
 
-When send a request about the city weather by id
+Setting the parameters for weather test by id
     &{params}=   Create Dictionary   id=${ID_CITY}     appid=${API_KEY}
-
-    ${RESPONSE}      GET On Session  ${SESSION}    ${WEATHER_ENDPOINT}   params=${params}    headers=${HEADER}
-    Set Test Variable   ${RESPONSE}
+    Set Global Variable     &{params}
 
 When send a request about weather by longitude and latitude
     &{params}=   Create Dictionary   lat=${LATITUDE}   lon=${LONGITUDE}     appid=${API_KEY}
