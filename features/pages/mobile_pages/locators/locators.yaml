@@ -7,3 +7,4 @@ PHONE: accessibility_id=phone number
 AGE: xpath=//android.view.ViewGroup[@content-desc="age-input-touchable"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText
 AGE_BUTTON: xpath=//android.view.ViewGroup[@content-desc="primary-modal-button"]
 SIGNUP: xpath=//*[@content-desc="signup"]
+COUNTER: accessibility_id=counter
