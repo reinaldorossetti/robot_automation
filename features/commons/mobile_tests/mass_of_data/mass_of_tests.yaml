@@ -1,0 +1,6 @@
+CREATE-ACCOUNT: xpath=//android.view.ViewGroup[@content-desc="create-account"]/android.widget.TextView
+FULL_NAME: accessibility id=full name
+EMAIL_ADDRESS: accessibility id=email address
+PASSWORD: accessibility id=password
+DOCUMENT: accessibility id=document
+PHONE: accessibility id=phone number
