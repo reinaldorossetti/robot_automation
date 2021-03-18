@@ -16,7 +16,7 @@ And select create account
     Click Element                               ${CREATE-ACCOUNT}
     Run Keyword And Ignore Error	            Wait Until Element Is Visible             ${FULL_NAME}       timeout=10
     # Strange behavior to load again after animation
-    ${IsElementVisible}=  Run Keyword And Return Status    Wait Until Element Is Visible  ${CREATE-ACCOUNT}  timeout=5
+    ${IsElementVisible}=  Run Keyword And Return Status    Wait Until Element Is Visible  ${CREATE-ACCOUNT}  timeout=10
     Run Keyword If  ${IsElementVisible}  AppiumLibrary.Click Element  ${CREATE-ACCOUNT}
 
 
@@ -31,9 +31,9 @@ When fill of the user registration
     Click Element                     ${AGE}
     Wait Until Element Is Visible     ${AGE_BUTTON}          timeout=15
     Click Element                     ${AGE_BUTTON}
-    wait until page contains          Declaro que li         timeout=15
-    Click Text                        Declaro que li
-    Click Text                        Quero receber
+    Wait Until Element Is Visible     ${CHECKBOX-TERM}       timeout=15
+    Click Element                     ${CHECKBOX-TERM}
+    Click Element                     ${CHECKBOX-MARKETING}
 
 submit user registration
     Wait Until Element Is Visible     ${SIGNUP}              timeout=15
@@ -55,6 +55,7 @@ Then validate phone confirmation screen
     page should contain text               ${CELLPHONE_MASK}
     page should contain text               ${MSN_CODIGO_VERIFICACAO}
     Capture Page Screenshot
+    Close
 
 Setting variables globais
     ${EMAIL_VALUE}=         FakerLibrary.Email
@@ -63,7 +64,7 @@ Setting variables globais
     ${CPF_VALUE}=           FakerLibrary.CPF
     log to console          ${CPF_VALUE}
     set global variable     ${CPF_VALUE}
-    ${PASSWORD_VALUE}=      FakerLibrary.Password
+    ${PASSWORD_VALUE}=      Generate Random String    length=10    chars=[UPPER][NUMBERS][LOWER]
     log to console          ${PASSWORD_VALUE}
     set global variable     ${PASSWORD_VALUE}
     ${NAME_VALUE}=          FakerLibrary.NAME

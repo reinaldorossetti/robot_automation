@@ -8,3 +8,5 @@ AGE: xpath=//android.view.ViewGroup[@content-desc="age-input-touchable"]/android
 AGE_BUTTON: xpath=//android.view.ViewGroup[@content-desc="primary-modal-button"]
 SIGNUP: xpath=//*[@content-desc="signup"]
 COUNTER: accessibility_id=counter
+CHECKBOX-TERM: xpath=//*[@content-desc="checkbox-terms"]/android.widget.TextView
+CHECKBOX-MARKETING: xpath=//*[@content-desc="checkbox-marketing"]/android.widget.TextView

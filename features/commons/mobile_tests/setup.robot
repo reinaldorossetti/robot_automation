@@ -1,5 +1,6 @@
 *** Settings ***
 Variables   ../../commons/mobile_tests/mass_of_data/mass_of_tests.yaml
+Resource    ../../commons/mobile_tests/tear_down.robot
 
 *** Variables ***
 ${ANDROID_AUTOMATION_NAME}    UIAutomator2

@@ -2,6 +2,7 @@
 Documentation   Simple example using AppiumLibrary
 Library         AppiumLibrary       15      run_on_failure=Log Source
 Library         FakerLibrary        locale=pt_BR
+Library         String
 Variables       ../../pages/mobile_pages/locators/locators.yaml
 Resource        ../../commons/mobile_tests/setup.robot
 Resource        ../../steps_definitions/mobile/user_registration_steps.robot
