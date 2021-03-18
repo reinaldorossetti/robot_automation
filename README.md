@@ -71,6 +71,10 @@ Api features:
 ```
 robot --loglevel DEBUG:INFO -d my_reports -i api_tests ./  
 ```
+Mobile features:
+```
+robot --loglevel DEBUG:INFO -d my_reports -i mobile_tests ./  
+```
 
 ** Do you need download the drivers to python script folder, compatible with your browser version:  
 https://chromedriver.chromium.org/downloads  

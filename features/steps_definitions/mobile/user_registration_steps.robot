@@ -54,6 +54,7 @@ Then validate phone confirmation screen
     page should contain text               Código enviado
     page should contain text               (19) 97150-8380
     page should contain text               Insira o código de verificação
+    Capture Page Screenshot
 
 Setting variables globais
     ${EMAIL_VALUE}=         FakerLibrary.Email
