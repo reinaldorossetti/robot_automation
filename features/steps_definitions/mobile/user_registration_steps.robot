@@ -50,7 +50,7 @@ Swipe Down
     Swipe                   ${start_x}    ${start_y}  ${end_x}  ${end_y}  2000
 
 Then validate phone confirmation screen
-    Wait Until Element Is Visible          ${COUNTER}          timeout=15
+    Wait Until Element Is Visible          ${COUNTER}          timeout=20
     page should contain text               ${MSN_CODE_SEND}
     page should contain text               ${CELLPHONE_MASK}
     page should contain text               ${MSN_CODIGO_VERIFICACAO}
