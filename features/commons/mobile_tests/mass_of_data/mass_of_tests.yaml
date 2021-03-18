@@ -1,6 +1,4 @@
-CREATE-ACCOUNT: xpath=//android.view.ViewGroup[@content-desc="create-account"]/android.widget.TextView
-FULL_NAME: accessibility id=full name
-EMAIL_ADDRESS: accessibility id=email address
-PASSWORD: accessibility id=password
-DOCUMENT: accessibility id=document
-PHONE: accessibility id=phone number
+CELLPHONE_VALUE: 19971508380
+CELLPHONE_MASK:  (19) 97150-8380
+MSN_CODIGO_VERIFICACAO: Insira o código de verificação
+MSN_CODE_SEND:   Código enviado

@@ -14,10 +14,10 @@ open test application
 And select create account
     Wait Until Element Is Visible               ${CREATE-ACCOUNT}      timeout=20
     Click Element                               ${CREATE-ACCOUNT}
-    Wait Until Page Does Not Contain Element    ${CREATE-ACCOUNT}      timeout=7
+    Run Keyword And Ignore Error	            Wait Until Element Is Visible             ${FULL_NAME}       timeout=10
     # Strange behavior to load again after animation
-    ${IsElementVisible}=  Run Keyword And Return Status    Wait Until Element Is Visible     ${FULL_NAME}    timeout=5
-    Run Keyword If  ${IsElementVisible}  Log To Console  ${IsElementVisible}    ELSE    AppiumLibrary.Click Element  ${CREATE-ACCOUNT}
+    ${IsElementVisible}=  Run Keyword And Return Status    Wait Until Element Is Visible  ${CREATE-ACCOUNT}  timeout=5
+    Run Keyword If  ${IsElementVisible}  AppiumLibrary.Click Element  ${CREATE-ACCOUNT}
 
 
 When fill of the user registration
@@ -26,7 +26,7 @@ When fill of the user registration
     Input Text                        ${EMAIL_ADDRESS}       ${EMAIL_VALUE}
     Input Text                        ${PASSWORD}            ${PASSWORD_VALUE}
     Input Text                        ${DOCUMENT}            ${CPF_VALUE}
-    Input Text                        ${PHONE}               19971508380
+    Input Text                        ${PHONE}               ${CELLPHONE_VALUE}
     Swipe Down                        ${PHONE}
     Click Element                     ${AGE}
     Wait Until Element Is Visible     ${AGE_BUTTON}          timeout=15
@@ -51,9 +51,9 @@ Swipe Down
 
 Then validate phone confirmation screen
     Wait Until Element Is Visible          ${COUNTER}          timeout=15
-    page should contain text               Código enviado
-    page should contain text               (19) 97150-8380
-    page should contain text               Insira o código de verificação
+    page should contain text               ${MSN_CODE_SEND}
+    page should contain text               ${CELLPHONE_MASK}
+    page should contain text               ${MSN_CODIGO_VERIFICACAO}
     Capture Page Screenshot
 
 Setting variables globais
