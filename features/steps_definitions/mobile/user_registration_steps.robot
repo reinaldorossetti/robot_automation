@@ -1,21 +1,5 @@
-*** Settings ***
-Documentation   Simple example using AppiumLibrary
-Library         AppiumLibrary       15      run_on_failure=Log Source
-Library         FakerLibrary        locale=pt_BR
-Variables       ../../pages/mobile_pages/locators/locators.yaml
-Resource        ../../commons/mobile_tests/setup.robot
-
-
-*** Test Cases ***
-Should send keys to search box and then check the value
-  Open Test Application
-  Select create account
-  Fill of the user registration
-  Submit user registration
-  Validate phone confirmation screen
-
 *** Keywords ***
-Open Test Application
+open test application
     Open Application  http://127.0.0.1:4723/wd/hub  automationName=${ANDROID_AUTOMATION_NAME}
     ...  platformName=${ANDROID_PLATFORM_NAME}
     ...  app=${ANDROID_APP}  appPackage=${APP_PACKAGE}     appActivity=${APP_ACTIVITY}
@@ -25,14 +9,18 @@ Open Test Application
     ...  appWaitDuration=60000
     ...  autoWebviewTimeout=30000
     ...  disableWindowAnimation=true
-    sleep  10 s  # wait animation the same break test.
     Setting variables globais
 
-Select create account
-    Wait Until Element Is Visible     ${CREATE-ACCOUNT}      timeout=15
-    Click Element                     ${CREATE-ACCOUNT}
+And select create account
+    Wait Until Element Is Visible               ${CREATE-ACCOUNT}      timeout=20
+    Click Element                               ${CREATE-ACCOUNT}
+    Wait Until Page Does Not Contain Element    ${CREATE-ACCOUNT}      timeout=7
+    # Strange behavior to load again after animation
+    ${IsElementVisible}=  Run Keyword And Return Status    Wait Until Element Is Visible     ${FULL_NAME}    timeout=5
+    Run Keyword If  ${IsElementVisible}  Log To Console  ${IsElementVisible}    ELSE    AppiumLibrary.Click Element  ${CREATE-ACCOUNT}
 
-Fill of the user registration
+
+When fill of the user registration
     Wait Until Element Is Visible     ${FULL_NAME}           timeout=15
     Input Text                        ${FULL_NAME}           ${NAME_VALUE}
     Input Text                        ${EMAIL_ADDRESS}       ${EMAIL_VALUE}
@@ -47,7 +35,7 @@ Fill of the user registration
     Click Text                        Declaro que li
     Click Text                        Quero receber
 
-Submit user registration
+submit user registration
     Wait Until Element Is Visible     ${SIGNUP}              timeout=15
     Click Element                     ${SIGNUP}
 
@@ -61,7 +49,7 @@ Swipe Down
     ${end_y}=               Evaluate      ${element_size['height']} * 0.5
     Swipe                   ${start_x}    ${start_y}  ${end_x}  ${end_y}  2000
 
-Validate phone confirmation screen
+Then validate phone confirmation screen
     Wait Until Element Is Visible          ${COUNTER}          timeout=15
     page should contain text               Código enviado
     page should contain text               (19) 97150-8380
