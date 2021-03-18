@@ -4,6 +4,6 @@ EMAIL_ADDRESS: accessibility_id=email address
 PASSWORD: accessibility_id=password
 DOCUMENT: accessibility_id=document
 PHONE: accessibility_id=phone number
-AGE: xpath=//android.view.ViewGroup[@content-desc="Idade"]
+AGE: xpath=//android.view.ViewGroup[@content-desc="age-input-touchable"]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText
 AGE_BUTTON: xpath=//android.view.ViewGroup[@content-desc="primary-modal-button"]
-SIGNUP: xpath=//android.view.ViewGroup[@content-desc="signup"]
+SIGNUP: xpath=//*[@content-desc="signup"]

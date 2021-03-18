@@ -9,7 +9,8 @@ Resource    ../../commons/mobile_tests/setup.robot
 Should send keys to search box and then check the value
   Open Test Application
   Select create account
-  Submit Search
+  Fill of the user registration
+  Submit user registration
 
 *** Keywords ***
 Open Test Application
@@ -22,37 +23,37 @@ Open Test Application
   ...  appWaitDuration=60000
   ...  autoWebviewTimeout=30000
   ...  disableWindowAnimation=true
-
-  Set Appium Timeout	15 seconds
-  sleep  10s
+  sleep  10 s  # wait animation the same break test.
 
 Select create account
-  Wait Until Element Is Visible          ${CREATE-ACCOUNT}      timeout=15
-  Click Element                          ${CREATE-ACCOUNT}
-  Wait Until Element Is Visible          ${FULL_NAME}          timeout=15
-  Input Text            ${FULL_NAME}                    Reinaldo Mateus
-  Input Text            ${EMAIL_ADDRESS}                reinaldo.rossetti@outlook.com
-  Input Text            ${PASSWORD}                     rei12345
-  Input Text            ${DOCUMENT}                     52540430244
-  Input Text            ${PHONE}                        19971508380
-  Swipe Down            ${AGE}
-  Swipe                 611    611    328    328
-  Click Text            ${AGE}
-  click element         ${AGE_BUTTON}
-  Click Text            Declaro que li
-  click text            Quero receber
-  Sleep  10
+  Wait Until Element Is Visible     ${CREATE-ACCOUNT}      timeout=15
+  Click Element                     ${CREATE-ACCOUNT}
 
-Submit Search
-  Click Element  btn_start_search
+Fill of the user registration
+  Wait Until Element Is Visible     ${FULL_NAME}           timeout=15
+  Input Text                        ${FULL_NAME}           Reinaldo Mateus
+  Input Text                        ${EMAIL_ADDRESS}       reinaldo.rossetti@outlook.com
+  Input Text                        ${PASSWORD}            rei12345
+  Input Text                        ${DOCUMENT}            52540430244
+  Input Text                        ${PHONE}               19971508380
+  Swipe Down                        ${PHONE}
+  Click Element                     ${AGE}
+  Wait Until Element Is Visible     ${AGE_BUTTON}          timeout=15
+  Click Element                     ${AGE_BUTTON}
+  wait until page contains          Declaro que li         timeout=15
+  Click Text                        Declaro que li
+  Click Text                        Quero receber
+
+Submit user registration
+  Wait Until Element Is Visible     ${SIGNUP}          timeout=15
+  Click Element                     ${SIGNUP}
 
 Swipe Down
   [Arguments]                         ${ELEMENT}
   ${element_size}=    Get Element Size    ${ELEMENT}
   ${element_location}=    Get Element Location    ${ELEMENT}
-  ${start_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
-  ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.3)
-  ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
-  ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.7)
-  Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
-  Sleep  3
+  ${start_x}=         Evaluate      ${element_location['x']} + (${element_size['width']})
+  ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']})
+  ${end_x}=           Evaluate      ${element_size['width']} * 0.5
+  ${end_y}=           Evaluate      ${element_size['height']} * 0.5
+  Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  2000
