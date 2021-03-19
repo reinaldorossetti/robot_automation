@@ -25,6 +25,15 @@ The idea is to do a simple test, for Zé Delivery company, following good practi
     >> validated the sub total value.  
     >> validated the total value.     
 
+
+Plus Feature - Mobile Test (Android Only):
+*** Test Cases ***  
+Test scenario - User registration  
+Given open test application  
+And select create account  
+When fill of the user registration And submit user registration  
+Then validate phone confirmation screen
+
 Extras:  
 - Highlight function.  
 - Trigger Function - More performance in different browsers (performance is critical issue in automation).   
