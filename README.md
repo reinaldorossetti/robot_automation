@@ -25,9 +25,9 @@ The idea is to do a simple test, for Zé Delivery company, following good practi
     >> validated the sub total value.  
     >> validated the total value.     
 
-
-Plus Feature - Mobile Test (Android Only):
-*** Test Cases ***  
+ 
+Plus Feature - Mobile Test (Android Only):  
+*** Test Cases ***    
 Test scenario - User registration  
 Given open test application  
 And select create account  
