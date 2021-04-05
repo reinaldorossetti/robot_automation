@@ -5,7 +5,7 @@ __pycache__/
 *.log
 *.html
 *.xml
-# C extensions
+# C extensionss
 *.so
 *.png
 # Distribution / packaging
@@ -131,3 +131,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /drivers/
+/output/
