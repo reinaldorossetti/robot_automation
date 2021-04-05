@@ -10,7 +10,7 @@ class ProductPage(BasePage):
         "add_product": "id=product-amount",
         "product_amount1": "css=div[class*=productContainer] div[class*=containerAddCustomButton] div[id*=amount]",
         "product_amount2": "id=product-amount",
-        "product_name1": "css=div[id*=next] div[class*=productTitle]",
+        "product_name1": "css=div[id='__next'] *[class*=productTitle]",
         "product_name2": "css=div[id=product-card] div[class*=productTitle]",
         "product_value1": "css=div[class*=priceText]",
         "product_value2": "css=#product-card-price div",
